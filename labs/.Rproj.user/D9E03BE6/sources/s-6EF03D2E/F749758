@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549491113968.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F749758",
+    "lastKnownWriteTime" : 1549491046,
+    "last_content_update" : 1549491046,
+    "path" : "~/GitHub/QPMspring2019/labs/lab2/QPM_Lab2.R",
+    "project_path" : "lab2/QPM_Lab2.R",
+    "properties" : {
+        "cursorPosition" : "126,13",
+        "scrollLine" : "123"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
