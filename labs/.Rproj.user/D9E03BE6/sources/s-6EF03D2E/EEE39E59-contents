@@ -10,3 +10,16 @@ quantile(x, probs=c(56, 60, 50, 26, 45, 35, 41, 43, 34, 42, 37, 39, 33, 28, 52, 
                     20, 44, 32))
 
 boxplot(x, main="Boxplot", xlab= "Mens Ages", xlim=c(20,60))
+
+5 + 3
+x <- c(7, 25, 39, 50, 86)
+quantile(x, probs = seq(0, 1, 0.25), na.rm = FALSE, names = TRUE, type = 7)
+plot(x, y, main = "XFL 2020", col=1000, xlim=c(1,100), ylim=c(1,50))
+pch <- c(xlab = 7, 25, 39, 50, 86)
+cex <- c(ylab = "G ALLEN")
+
+
+5 - 3
+5 / 2
+18 / 7.6
+result <- 18 - 9
