@@ -25,11 +25,11 @@
 #  Saved in your computer?
 #  Where in your computer?
 
-setwd("~/GitHub/QPMspring2019/labs")
+
 ## 1.2: Importing data
 # go to: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/ARKOTI
 # download PESenergy.csv
-energyData <- read.csv("lab2/PESenergy.csv")
+energyData <- read.csv("PESenergy.csv")
 
 
 
@@ -67,7 +67,7 @@ table(energyData$Energy)
 
 
 ## 2.2: subsetting data
-subset1 <- energyData[20:60,]                               # by row
+subset1 <- energyData[1:20,]                               # by row
 subset2 <- energyData[,5:7]                                # by column
 subset3 <- energyData[,c("Date", "Energy", "Approval")]    # by column name
 
@@ -116,7 +116,7 @@ plot(x,        # x variable
 	 
 	 
 ## 3.2: Saving plots
-pdf("~/Documents/GitHub/QPMspring2019/problemSets/stories.pdf", width=7, height=7)
+pdf("stories.pdf", width=7, height=7)
 plot(energyData$Approval, energyData$Energy,
 	 ylab="Television Stories", xlab="Presidential Approval")
 dev.off()
@@ -133,64 +133,36 @@ dev.off()
 #    It is a dataset on randomly sampled movies released between 1972 to 2014 in 
 #    the Unites States. The description of the variables is available on her webpage
 #    (http://www2.stat.duke.edu/~mc301/data/movies.html).
-Movies <- read.csv("lab2/movies.csv")
+
 
 # 3. How many rows and columns are there?
-# Movies <- head("lab2/movies.csv")
-dim(Movies)
 
-# 651 rows, 32 variables
+
 # 4. What is the name of the fifth column? Store it as a new object and find how many
 #    of them are PG-13.
-#setwd("~/lab2movies.csv")
 
-colnames(Movies)[5]
 
 # 5. Subset the data based on the following four columns:
 #      (1) runtime
 #      (2) imdb_rating
 #      (3) imdb_num_votes
 #      (4) audience_score
-newSubset <- Movies[, c("runtime", "imdb_rating")]
-
-
-
-plot(Movies$runtime, Movies$imdb_rating,
-     ylab= "runtime", xlab= "imdb_rating")
-plot(Movies$imdb_num_votes, Movies$audience_score,
-     ylab= "imdb votes", xlab="Audience Score")
 
 
 # 6. What are the means of runtime and imdb_rating?
 #    What are the medians of imdb_num_votes and audience_score?
-mean(Movies$runtime, na.rm=T)
 
-mean(Movies$imdb_rating)
 
 # 7. Create a plot that nicely summarizes the distribution of the IMDB rating 
 #    for all the movies (using imdb_rating).
-hist(Movies$imdb_rating, xlab="IMDb rating", main="")  # histogram
+
 
 # 8. Pick two numeric variables and plot them against each other. Explain what you find. 
 #    Be creative and try many plot options (pch, cex, col, etc.).
-plot(Movies$thtr_rel_year, Movies$imdb_rating, 
-     xlab="IMDB rating", main=""#, ylim=c(,10)
-     )  # histogram
+
 
 # 9. Save the plots you made in Question 7 and 8 in .pdf.
-pdf("moviesPlot.pdf")
 
-plot(Movies$thtr_rel_year, Movies$imdb_rating, 
-     xlab="IMDB rating", main=""#, ylim=c(,10)
-)  # histogram
-
-dev.off()
 
 # EXTRA. Create a subset of the movies that only include Drama.
 #        Create a subset of the movies that were released before 1990.
-subsetCriteria <- Movies$genre=="Drama"
-newMovies <- Movies[subsetCriteria,]
-
-subsetCriteria <- Movies$thtr_rel_year >= 1990
-newMovies <- Movies[subsetCriteria,]
-
