@@ -1,6 +1,6 @@
 #####################################################
 ## File: Lab5.R                                    ##
-## t-distribution and confidene intervals          ##
+## t-distribution and confidence intervals         ##
 #####################################################
 
 
@@ -18,7 +18,7 @@
 ## In R, the t-distribution functions are normalized to mean = 0 and sd = 1
 ## You have to specify degrees of freedom
 
-## Visualize the two different distributions by taking 1 million random draws.
+## Visualize the two different distributions by taking 1 million random draws
 ## Note: this is different than what you need to do in the homework!
 random_normal <- rnorm(1000000)
 random_t <- rt(1000000, df = 5)
@@ -66,10 +66,10 @@ View(anes)
 
 
 
-## Let's say our confidence coefficient = .95.
+## Let's say our confidence coefficient = .95
 ## Calculate the appropriate confidence interval for the
 ## mean level of support for how George W. Bush was
-## handling the war in Iraq (bushIraq).
+## handling the war in Iraq (bushIraq)
 z95 <- qnorm((1 - .95)/2, lower.tail = FALSE)## (1-confidence coefficient)/2
 n <- length(na.omit(anes$bushiraq))
 sample_mean <- mean(anes$bushiraq, na.rm = TRUE)
@@ -97,20 +97,22 @@ confint99
 #### Group Work ####
 
 
-## 1. Write the names of all group members.
+## 1. Write the names of all group members
 
 
 
 
-## 2. Load data using the following code. Read the help file.
+## 2. Load data using the following code
+## Read the help file
 install.packages("faraway")
 library(faraway)
 data(africa)
 ?africa
 
 
-## 3. Create two subsets of the data.  One with only countries were no military coups
-## have occurred.  One where any military coups have occurred.
+## 3. Create two subsets of the data
+## One with only countries were no military coups have occurred
+## One where any military coups have occurred
 
 
 
@@ -118,7 +120,7 @@ data(africa)
 
 
 ## 4. Find a 95% confidence interval for the mean percent of voting in the last
-## elections for each subset of countries.
+## elections for each subset of countries
 
 
 
@@ -137,7 +139,7 @@ data(africa)
 #### Additional Distribution Questions #####
 
 ## 6. Find the 2.5th and 97.5th percentiles of the t distribution
-## with 5 degrees of freedom.
+## with 5 degrees of freedom
 
 
 
@@ -145,7 +147,7 @@ data(africa)
 
 
 ## 7. Find the probability that x is at least two standard deviations
-## above the mean of a t-distribution with 10 degrees of freedom.
+## above the mean of a t-distribution with 10 degrees of freedom
 
 
 
@@ -154,7 +156,7 @@ data(africa)
 
 ## 8. Find the density of the t-distribution with 10 degrees of 
 ## freedom at x = -1.96 and x = 1.96.  Explain the output given what
-## we know about the t-distribution and the standard normal distribution.
+## we know about the t-distribution and the standard normal distribution
 
 
 
