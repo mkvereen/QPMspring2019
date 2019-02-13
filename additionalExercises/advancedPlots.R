@@ -1,5 +1,4 @@
 #######################
-## File: Lab7.R      ##
 ## Advanced Plotting ##
 #######################
 
@@ -93,11 +92,6 @@ Election08$State[which.max(Election08$BA)] ## D.C.
 ## text() adds text inside the axes at coordinates we pick
 text(x = 45, y = 75, labels = "D.C.", cex = .75)
 
-
-
-
-
-
 #### Plot 3 -- More fun with labels
 
 ## Same empty plot as above
@@ -128,8 +122,6 @@ legend("topleft", legend = c("2008 Obama Win", "2008 McCain Win"),
        cex = .75,
        bty = "n")
 
-
-
 #### Other fun tools
 
 ## Jitter overlapping points
@@ -156,18 +148,9 @@ axis(side = 2)
 abline(a = 0, b = 1)
 abline(a = 0, b = 2, col = "blue", lty = 3)
 
+## Exercises
 
-
-
-
-
-#### Group Activity ####
-
-## 1.) Write the names of all group members.
-
-
-
-## 2.) Load data on the mean lawyers' ratings of state judges
+## 1.) Load data on the mean lawyers' ratings of state judges
 ## in the US Superior Court in 1977
 install.packages("datasets")
 library("datasets")
@@ -175,7 +158,7 @@ data("USJudgeRatings")
 ?USJudgeRatings
 
 
-## 3.) Make an interesting, readable plot to visualize what types of 
+## 2.) Make an interesting, readable plot to visualize what types of 
 ## judges are given high ratings as "Worthy of retention." In other words,
 ## fix the ugly plot below by doing the following:
 ## - provide a title and label the axes
@@ -184,7 +167,6 @@ data("USJudgeRatings")
 ##    above and below the mean or median... try ifelse())
 ## - use something other than the default colors and symbols
 ## - include a legend
-## Show your TA before you leave.
 
 plot(x = USJudgeRatings$WRIT, y = USJudgeRatings$RTEN)
 mtext(side = 1, "Note: ratings on a scale of 1-10, with 10 as highest rating.",
