@@ -1,5 +1,4 @@
 #####################################################
-## File: Lab6.R                                    ##
 ## Functions in R                                  ##
 #####################################################
 
@@ -129,37 +128,20 @@ awesomeVariance2 <- function(vector){
 awesomeVariance2(1:20)
 
 
+## Exercises
 
-
-
-
-#### Group Work ####
-
-
-## 1. Write the names of all group members.
-
-
-
-
-## 2. Write a function that conducts a one-tail t-test and return a p-value
+## 1.) Write a function that conducts a one-tail t-test and return a p-value
 ##    when H0: mu >= mu0 and H1: mu < mu0.
 ##    Hint 1: You need two inputs: (1) sample (numeric vector) and (2) null hypothesis (mu0).
 ##    Hint 2: Since the population variance is unknown and our sample is small (Q3), you 
 ##    should use a t-distribution with n-1 degrees of freedom.
 
 
-
-
-## 3. Using the function above, test whether you can reject the null that (1) mu0 >= 73 and 
+## 2.) Using the function above, test whether you can reject the null that (1) mu0 >= 73 and 
 ##    (2) mu0 >= 80 with 95% confidence level.
 
 our_sample <- c(63, 75, 84, 58, 52, 96, 63, 55, 76, 83)
 
-
-
-
-################ Additional Question ################ 
-
-## 4. Create a function that conducts a two-tail t-test and returns a p-value
+## 3.) Create a function that conducts a two-tail t-test and returns a p-value
 ##    when H0: mu = mu0 and H1: mu != mu0. Then, test whether you can reject the null that
 ##    (1) mu0 = 73 and (2) mu0 = 80 using our_sample
