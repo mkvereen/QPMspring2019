@@ -60,9 +60,18 @@ dt(-3, df = 5)
 
 #### Using R to calculate CIs
 
+
 ## Load the data: a subset of 2004 American National Election Study
-load("anes.Rdata")
 View(anes)
+
+setwd("~/Documents/GitHub/QPMspring2019/labs/lab5")
+load("anes.Rdata")
+
+View(anes)
+getwd()
+View(anes)
+
+
 
 
 
@@ -70,8 +79,9 @@ View(anes)
 ## Calculate the appropriate confidence interval for the
 ## mean level of support for how George W. Bush was
 ## handling the war in Iraq (bushIraq)
-z95 <- qnorm((1 - .95)/2, lower.tail = FALSE)## (1-confidence coefficient)/2
-n <- length(na.omit(anes$bushiraq))
+z95 <- qnorm((1 - .95)/2, lower.tail = FALSE)## (1-confidence coefficient)/2, giving u z value at which ur finding 97.5 quartile for normal dist
+n <- length(na.omit(anes$bushiraq)) #remove missing values
+n
 sample_mean <- mean(anes$bushiraq, na.rm = TRUE)
 sample_sd <- sd(anes$bushiraq, na.rm = TRUE)
 lower_95 <- sample_mean - (z95 * (sample_sd/sqrt(n)))
@@ -115,18 +125,26 @@ data(africa)
 ## One where any military coups have occurred
 
 
-
-
+nocoups<-africa[africa$militcoup==0,]
+#double equal sign is "equal to" remember 
+anycoups<-africa[africa$militcoup!=0]
+#! means not equal to
 
 
 ## 4. Find a 95% confidence interval for the mean percent of voting in the last
 ## elections for each subset of countries
 
+zscore<-z95
+#aka
 
+zscore<-qnorm((1-.95)/2, lower.tail = F)
+length(nocoups)
+sd(nocoups$pctvote)
 
+#since it's a t-score u have to use it for left hand side, dividing by square root
+mean(nocoups$pctvote, na.rm=T) + zscore * (sd(nocoups$pctvote, na.rm=T)/sqrt(length(nocoups$pctvote)))
 
-
-
+#THIS . DID NOT. WORK. 
 
 ## 5. What do you learn about voter turnout in African countries from
 ## these confidence intervals?

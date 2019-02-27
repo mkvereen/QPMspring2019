@@ -218,18 +218,29 @@ table("gallip_and_date")
 
 randompoints<-rnorm(1500, .42, .5)
 
-
+randompoints
 
 ## 5. According to your answer in Q4, what are the 20th and 75th quantiles of 
 ##    the distribution?
 
+mean(randompoints)
+summary(randompoints)
+sd(randompoints)
 
+qnorm(c(0.20, 0.75), mean=0.4076387, sd=0.4978537)
+
+# -0.01136555  0.74343592
 
 ## 6. Suppose a new poll suggests that the Trump approval rate is 47%. 
 ##    According to your answer in Q4, what is the probability of a poll showing 
 ##    support for Trump higher than this?
 
+#mean=.47
+#sd=.
+pnorm(.53, mean(randompoints), sd(randompoints))
 
+0.5793965
+pnorm(q=, mean=, sd=) 
 
 ##################### OPTIONAL #####################
 
