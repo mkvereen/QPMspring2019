@@ -20,7 +20,7 @@ salaries<-rnorm(n=10000, mean=40000, sd=15000)
 plot(density(salaries), 
      main="Distribution of Salaries",
      xlab="salaries", ylab="Probability Density")
-pdf(file = "PS2PDF1")
+pdf(file = "PS2Q5")
 dev.off
 
 #Question 6
@@ -40,7 +40,7 @@ lines(PlotD, main="D", col="black")
 lines(PlotE, main="E", col="orange")
 lines(PlotF, main="F", col="blue")
 
-pdf("PS2Q7")
+pdf("PS2Q6")
 
 #Question 7
 
@@ -122,15 +122,13 @@ sd(R107)
 #F
 hist(R88, xlim= c(-1,1), col="blue")
 
-hist(D88,xlab= "Wnom", add=TRUE,col = "red", 
-    main =  "Q7 Part G")
+hist(D88,xlab= "Wnom", add=TRUE,col = "red", main =  "Q7 Part G")
 pdf("PS2Q7F1")
 
 
 #G
 hist(R107, xlim = c(-1,1), col = "blue")
-hist(D107,xlab= "Wnom", add=TRUE,col = "red", 
-     main =  "Q7 Part G")
+hist(D107,xlab= "Wnom", add=TRUE,col = "red",  main =  "Q7 Part G")
 pdf("PS2Q7G1")
 
 
