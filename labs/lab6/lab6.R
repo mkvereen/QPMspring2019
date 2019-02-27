@@ -7,13 +7,13 @@
 
 ## Goals:
 ## 1. Difference in means test in R
-## 2. Contingency tables in R
+## 2. Contingency tables in R - difference in means and proprotions 
 
 
 ##
 ## 1. Difference in means test
 ##
-help(t.test)
+help(t.test) 
 
 
 social <- read.csv("social.csv")
