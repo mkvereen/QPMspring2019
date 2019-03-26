@@ -30,10 +30,10 @@ PlotA<-density(rnorm(100000, mean=0, sd=.04^.5))
 PlotB<-density(rnorm(100000, mean=0, sd=3^.5))
 PlotC<-density(rnorm(100000, mean=3, sd=3^.5))
 PlotD<-density(rnorm(100000, mean=3, sd=.4^.5))
-PlotE<-density(rnorm(1000,mean=-2, sd=5^.5))
-PlotF<-density(rnorm(1000, mean=-2, sd=.25^.5))
+PlotE<-density(rnorm(100000,mean=-2, sd=5^.5))
+PlotF<-density(rnorm(100000, mean=-2, sd=.25^.5))
 
-plot(PlotA, main="Question 7",col="red", xlab="Mean", ylab="Probability Density", ylim = c(0,2), xlim= c(-5,10))
+plot(PlotA, main="Question 6",col="red", xlab="Mean", ylab="Probability Density", ylim = c(0,2), xlim= c(-5,10))
 lines(PlotB, main="B", col="purple")
 lines(PlotC, main="C", col="magenta")
 lines(PlotD, main="D", col="black")
@@ -41,15 +41,16 @@ lines(PlotE, main="E", col="orange")
 lines(PlotF, main="F", col="blue")
 
 pdf("PS2Q6")
+dev.off
 
 #Question 7
 
 setwd("~/Documents/GitHub/QPMspring2019/problemSets/PS2")
 Qsev<-read.csv("drugCoverage.csv")
 
-DrugperMo<-Qsev$drugsmedia/Qsev$Year
-QsevA<-Qsev$drugsmedia/Qsev$Year
-hist(QsevA)
+DrugperMo<-Qsev$drugsmedia
+QsevA<-Qsev$drugsmedia
+
 Qsev
 
 #A
@@ -64,13 +65,13 @@ boxplot(Qsev$approval)
 #C
  #number of drug-related stories on the vertical axis, 
  #and place the unemployment rate on the horizontal axis. 
-
+pdf()
 plot(Qsev$unemploy, Qsev$drugsmedia, 
      main = "Q 7C plot 1",
      xlab = "Unemployment",
      ylab = "drug media stories",
      pch = 19)    
-
+dev.off()
 plot( Qsev$drugsmedia, Qsev$unemploy, 
      main = "Q 7C plot 2",
      xlab = "drug media stories",
