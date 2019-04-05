@@ -14,6 +14,7 @@
 ## Paper: G. King, O. Rosen, M. Tanner, A.F. Wagner (2008)
 ## “Ordinary economic voting behavior in the extraordinary
 ## election of Adolf Hitler.” 
+setwd("~/Documents/GitHub/QPMspring2019/lab12")
 load("nazis.Rdata")
 
 
