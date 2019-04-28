@@ -1,0 +1,291 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx,textcomp}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage[reqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{amssymb,enumerate}
+\usepackage[all]{xy}
+\usepackage{endnotes}
+\usepackage{lscape}
+\newtheorem{com}{Comment}
+\usepackage{float}
+\usepackage{hyperref}
+\newtheorem{lem} {Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{cor}{Corollary}
+\newtheorem{obs}{Observation}
+\usepackage[compact]{titlesec}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{xcolor}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\definecolor{light-gray}{gray}{0.65}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+\newcommand{\Sref}[1]{Section~\ref{#1}}
+\newtheorem{hyp}{Hypothesis}
+
+\title{Problem Set 3}
+\date{Due: April 3, 2018}
+\author{Quantitative Political Methodology (U25 363)}
+
+\begin{document}
+	\maketitle
+	
+	
+	\section*{Instructions}
+	\begin{itemize}
+			\item Put your name at the top of your written document. Please show your work if possible. You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you have plots, attach them as well within your written document. Make sure you label clearly which question the codes correspond to. If you are not sure if work needs to be shown for a particular problem, please ask me.
+		\item Your homework should be submitted electronically on the course GitHub page.
+		\item This problem set is due before the beginning of class on Wednesday April 3, 2019. No late assignments will be accepted.
+		\item Total available points for this homework is 100.
+	\end{itemize}
+	
+	\section*{Question 1 (5 points)}
+	%You would like to find the proportion of bills passed by Congress that were vetoed by the President in the last congressional session. After checking congressional records, you see that for the population of all 40 bills passed, 2 were vetoed. Does it make sense to construct a confidence interval using these data to answer your question? Explain.
+	
+	Using data on the 2008 New Hampshire Democratic Party Primary, visualize the relationship between the proportion of voters for Howard Dean in the 2004 Democratic primary and the proportion of voters for Barack Obama in the 2008 Democratic primary. To get the dataset, type:
+	\begin{verbatim}
+	install.packages("faraway")
+	library("faraway")
+	data("newhamp")
+	help("newhamp")
+	\end{verbatim}
+	\newpage
+	\noindent In addition to the relationship between the support for Dean in 2004 and the support for Obama in 2008, we are also interested in whether two different voting systems --- hand-counted and machine-counted ballots --- matter. At a minimum, you have to do the following things in a single plot:
+	\begin{itemize}
+		\item Properly label titles and axes
+		\item Set the ranges of the axes appropriately
+		\item Use different colors and symbols to indicate the two ballot systems
+		\item Include a legend that explains colors and symbols
+	\end{itemize}
+	
+		\vspace{7em}
+	
+	
+	
+	\section*{Question 2 (10 points)}
+	The shape of the t-distribution varies by a parameter call ``degrees of freedom,'' or $df$ for short.
+	
+	
+	\begin{itemize}
+		
+		\item[(a)] When $df$ is large, the t-distribution approximates what other distribution?\\
+		\vspace{7em}
+		
+		
+		\item[(b)] Use \texttt{R} to plot the standard normal distribution as well as three t-distributions with $df = 20$, $df = 3$, and $df = 1$. Present all plots on \emph{the same set of axes}, print, and attach to your submitted homework.  Also attach the code used to produce the plot.  Give your plot a meaningful title and label your axes. Use a different color, shade of gray, or line type for each line so a reader can clearly see the difference. (You may find \texttt{R}'s help files useful. For example, try \texttt{?plot}, \texttt{?lines}, \texttt{?dt}.)\\
+
+		
+\newpage		
+		\item[(c)] Describe what your plot shows about the t-distribution. With reference to your plot, explain how different sample sizes might affect your estimates of population parameters.\\
+		
+	\end{itemize}
+	
+	
+		\vspace{7em}
+	\section*{Question 3 (20 points)}
+	Please find the data for this question by using the following code:
+	\begin{verbatim}
+	install.packages("Zelig")
+	library("Zelig")
+	data("voteincome")
+	?voteincome
+	\end{verbatim} 
+	
+\noindent Make sure to show all your work for parts (b) and (d) either with \texttt{R} code you attach or by hand in the space provided.  If you complete (b) and (d) in \texttt{R}, make sure to clearly label the code pertaining to each part of the problem.\\
+	
+	
+	
+\noindent You would like to test the hypothesis whether the average age among American voters is different from 50. 
+	
+	\begin{itemize}
+		\item[(a)] State the null hypothesis and the alternative hypothesis.\\
+
+		
+		\newpage
+			\item[(b)] Calculate the standard error, the $z$ test-statistic and the p-value for your test.\\
+		\vspace{10em}
+		
+		
+		
+			\item[(c)] What is your conclusion at $\alpha=0.05$?\\
+		\vspace{10em}
+		
+		
+		
+			\item[(d)] Calculate the $95\%$ confidence interval for the mean age.\\
+		\vspace{10em}
+		
+		
+			\item[(e)] How are your answers for parts (c) and (d) related?\\
+	\end{itemize}
+
+\newpage
+	
+\section*{Question 4 (25 points)}
+		Please show all work for this problem in the space provided.\\
+
+\noindent A librarian would like to learn how many books her patrons purchase per year. In particular she wants to test the $H_0:\mu=10$ against $H_a:\mu<10$. She randomly selects 16 patrons and asks them how many books they purchase per year. She finds that $\bar y=9.5$ and $s=1.2$.
+	
+	\begin{itemize}
+		\item[(a)] Given the sample size and the fact that you do not know the population standard deviation, which test statistic would you use? \\
+		\vspace{11em}
+		
+		\item[(b)] What additional assumption do you need to use the test-statistic indicated in part (a)?\\
+		\vspace{11em}
+		
+		
+		\item[(c)] Calculate the test-statistic, and the p-value. What is your conclusion at significance level $\alpha=0.05$?\\
+		\vspace{11em}
+		
+		\item[(d)] Assume that you know the population standard deviation $\sigma=1.2$. Can you use a test statistic different from the one indicated in part (a)? If so, what is that test-statistic called?\\
+		\vspace{11em}
+		
+		
+		\item[(e)] What assumption (if any) do you need to use the test-statistic indicated in part (d)?\\
+		\vspace{11em}
+		
+		
+		\item[(f)] Calculate the standard error, the test-statistic and the p-value. What is your conclusion at significance level $\alpha=0.05$?\\
+		\vspace{11em}
+		
+		
+		\item[(g)] Compare your conclusions in parts (c) and (f). Explain the difference (if any) in the conclusions.
+		
+	\end{itemize}
+		\vspace{7em}
+	
+	\section*{Question 5 (5 points)}
+	A recent poll of 698 decided voters in Pennsylvania showed 341 preferred Donald Trump and 357 preferred Hillary Clinton. Let $\pi$ be the population proportion of decided Pennsylvania voters who prefer Trump.\\
+	
+	\begin{itemize}
+		\item[(a)] If the voters are only given two options (Trump or Clinton) and the sample size of your survey is relatively large, what type of distribution is the population distribution? What type of distribution is the sampling distribution of your survey?\\
+		\vspace{11em}
+		
+		
+		
+		\item[(b)] What is the value of $\hat{\pi}$, the estimate of $\pi$ obtained from the survey?\\
+		\vspace{11em}
+		
+		
+		\item[(c)] What is the standard error of this estimate?\\
+		\vspace{11em}
+		
+		\item[(d)] Give the 95\% confidence interval for the value of $\pi$.\\
+
+	\end{itemize}
+	
+			\vspace{7em}
+	\section*{Question 6 (10 points)}
+Field experiments have become an important tool to understand various political phenomena. For example, ``Getting Out the Vote in Local Elections: Results from Six Door-to-Door Canvassing Experiments'' by Green, Gerbern, and Nickerson (2003) is an early field experimental work on political behavior. The paper is available at \url{http://onlinelibrary.wiley.com/doi/10.1111/1468-2508.t01-1-00126/full}, but it's also in the \href{https://drive.google.com/drive/folders/145RbI9kHmXjkqfCkPF-_UPG0rFqmiJXi}{class readings folder}. Read the abstract (and introduction if you wish) of the paper and answer the following questions. \\
+
+\begin{itemize}
+	
+	\item[(a)]  As succinctly as possible, what is the causal claim being made by the authors? \\
+	
+	\vspace{2.5cm}
+	
+	
+	\item[(b)]  What is the ``treatment'' (or predictor) variable? \\
+	
+	\vspace{2.5cm}
+	
+	
+	\item[(c)]  What is the outcome variable? \\
+	
+	\vspace{2.5cm}
+	
+	
+	\item[(d)]  What allows the authors to claim that their findings are causal? \\
+
+	
+\end{itemize}
+
+		\vspace{7em}
+\section*{Question 7 (15 points)}
+
+For the 2006 GSS, a comparison of males and females on the number of hours a day that the subject watched TV gave:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|cccc}
+		Group  & N & Mean & St.Dev & SE Mean \\ 
+		\hline \rule[-2ex]{0pt}{5.5ex}
+		Females & 1117  & 2.99 & 2.34 & 0.070  \\ 
+		Males &  870 & 2.86 & 2.22 & 0.075 \\ 
+		\hline 
+	\end{tabular} 
+\end{table}
+
+\begin{itemize}
+	
+	\item[(a)] Conduct all parts of a significance test to analyze whether the population means differ for females and males. Interpret the p-value, and report the conclusion for $\alpha$-level = 0.05. \\
+	
+	\vspace{4cm}
+	
+	
+	\item[(b)] If you were to construct a 95\% confidence interval comparing the means, would it contain 0? (You can answer based on the result in (a), without finding the interval.) \\
+	
+	\vspace{4cm}
+	
+	
+	\item[(c)] Do you think that the distribution of TV watching is approximately normal? Why or why not? Does this affect the validity of your inferences? Explain your answer. \\
+	
+	
+\end{itemize}
+
+
+		\vspace{7em}
+\section*{Question 8 (10 points)}
+Imagine that the data above is changed as below (note the changed sample size). A comparison of males and females on the number of hours a day that the subject watched TV gave:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|cccc}
+		Group  & N & Mean & St.Dev & SE Mean \\ 
+		\hline \rule[-2ex]{0pt}{5.5ex}
+		Females & 11  & 2.99 & 2.34 & 0.070  \\ 
+		Males &  16 & 2.86 & 2.22 & 0.075 \\ 
+		\hline 
+	\end{tabular} 
+\end{table}
+
+\vspace{2em}
+\noindent Conduct all parts of a significance test to analyze whether the population means differ for females and males. Interpret the p-value, and report the conclusion for $\alpha$-level = 0.05.\\
+	
+\end{document}
+
